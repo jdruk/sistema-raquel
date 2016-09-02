@@ -1,0 +1,30 @@
+<nav class="navbar navbar-inverse navbar-fixed-top" >
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">SisFri</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><%= link_to "Home", root_path %></li>
+            <li><a href="#">Clientes</a></li>
+            <li><a href="#">Cheques</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Perfil
+                    <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><%= link_to  edit_user_registration_path do  %>
+                            <span class="glyphicon glyphicon-user"></span> Senha
+                            <% end %>
+                        </li>
+                        <li>
+                            <%= link_to destroy_user_session_path, :method => :delete do %>
+                                <span class="glyphicon glyphicon-log-out"></span> Sair
+                            <% end %>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

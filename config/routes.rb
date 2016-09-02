@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   get 'dashboard/index'
   root 'dashboard#index'
   devise_for :users, controllers: {
-       sessions: 'users/sessions'
+       sessions: 'users/sessions',
+       registrations: 'users/registrations'
   }
   resources :clients
   # The priority is based upon order of creation: first created -> highest priority.
