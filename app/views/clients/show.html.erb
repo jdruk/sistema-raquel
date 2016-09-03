@@ -20,6 +20,9 @@
 </div>
 <div class="well">
     <%= link_to 'Novo pagamento', new_client_payment_path(@client) , class: 'btn btn-primary'%>
+    Total pagamentos: <div class="btn btn-default"><%= number_to_currency @client.paid %></div> Total débitos: <div class="btn btn-danger">
+        <%= number_to_currency @client.debit %></div>  Caixa: <div class="btn btn-default"><%= number_to_currency @client.cashier %>
+    </div>
 </div>
 <p>
     <h2>Pagamentos</h2>
