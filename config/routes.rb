@@ -5,7 +5,11 @@ Rails.application.routes.draw do
        sessions: 'users/sessions',
        registrations: 'users/registrations'
   }
-  resources :clients
+  resources :clients do
+    resources :payments
+  end
+
+  get 'payments/geral' => 'payments#geral', as: :geral_payment
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

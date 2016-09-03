@@ -1,14 +1,12 @@
-<p id="notice"><%= notice %></p>
+<h1>Lista de clientes</h1>
 
-<h1>Listing Clients</h1>
-
-<table>
+<table class="table table-hover">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Address</th>
-      <th>Telephone</th>
-      <th colspan="3"></th>
+      <th>Nome</th>
+      <th>Endereço</th>
+      <th>Telefone</th>
+      <th colspan="3">Ações</th>
     </tr>
   </thead>
 
@@ -18,9 +16,9 @@
         <td><%= client.name %></td>
         <td><%= client.address %></td>
         <td><%= client.telephone %></td>
-        <td><%= link_to 'Show', client %></td>
-        <td><%= link_to 'Edit', edit_client_path(client) %></td>
-        <td><%= link_to 'Destroy', client, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', client, class: "btn btn-default btn-xs" %></td>
+        <td><%= link_to 'Editar', edit_client_path(client), class: "btn btn-default btn-xs" %></td>
+        <td><%= link_to 'Deletar', client, method: :delete, data: { confirm: 'Você tem certeza?' },class: "btn btn-danger btn-xs" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Client', new_client_path %>
+<%= link_to 'Novo cliente', new_client_path, class: "btn btn-primary"  %>

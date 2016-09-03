@@ -1,0 +1,25 @@
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Valor</th>
+      <th>Data</th>
+      <th>Descrição</th>
+      <th class="text-center" colspan="3">Ações</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% payments.each do |payment| %>
+      <tr>
+        <td><%= number_to_currency payment.price, precision: 2 %></td>
+        <td><%= l(payment.date_payment) %></td>
+        <td><%= payment.description %></td>
+        <td><%= link_to 'Mostrar', client_payment_path(@client, payment), class: 'btn btn-default btn-xs' %></td>
+        <td><%= link_to 'Editar', edit_client_payment_path(@client,payment), class: 'btn btn-default btn-xs' %></td>
+        <td><%= link_to 'Deletar', [@client,payment], method: :delete, data: { confirm: 'Você tem certeza?' } , class: 'btn btn-danger btn-xs'%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

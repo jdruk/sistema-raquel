@@ -1,0 +1,23 @@
+<p>
+  <strong>Price:</strong>
+  <%= @payment.price %>
+</p>
+
+<p>
+  <strong>Payment type:</strong>
+  <%= @payment.payment_type %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @payment.description %>
+</p>
+
+<p>
+  <strong>Client:</strong>
+  <%= @payment.client.name %>
+</p>
+
+<%= link_to 'Editar', edit_client_payment_path(@client,@payment), class: 'btn btn-default' %>
+<%= link_to 'Voltar', client_path(@client) , class: 'btn btn-default'%>
+<hr>

@@ -11,16 +11,20 @@
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <style media="screen">
-        body{
-            padding-top: 45px;
-        }
+    body{
+        padding-top: 54px;
+    }
     </style>
+
     <!-- Latest compiled JavaScript -->
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+    </script>
 </head>
 <body>
+    <%= render partial: "shared/flash_messages", flash: flash %>
     <% if user_signed_in? %>
-        <%= render partial: "shared/admin" %>
+    <%= render partial: "shared/admin" %>
     <% end %>
     <div class="container">
         <div class="row">

@@ -1,19 +1,34 @@
-<p id="notice"><%= notice %></p>
+<div class="panel panel-default">
+    <div class="panel-heading">Informações do cliente</div>
+    <div class="panel-body">
+        <strong>Nome:</strong>
+        <%= @client.name %>
+    </p>
 
+    <p>
+        <strong>Endereço:</strong>
+        <%= @client.address %>
+    </p>
+
+    <p>
+        <strong>telefone:</strong>
+        <%= @client.telephone %>
+    </p>
+    <%= link_to 'Editar', edit_client_path(@client), class: 'btn btn-primary' %>
+    <%= link_to 'Voltar', clients_path, class: 'btn btn-default' %>
+</div>
+</div>
+<div class="well">
+    <%= link_to 'Novo pagamento', new_client_payment_path(@client) , class: 'btn btn-primary'%>
+</div>
 <p>
-  <strong>Name:</strong>
-  <%= @client.name %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @client.address %>
-</p>
-
-<p>
-  <strong>Telephone:</strong>
-  <%= @client.telephone %>
-</p>
-
-<%= link_to 'Edit', edit_client_path(@client) %> |
-<%= link_to 'Back', clients_path %>
+    <h2>Pagamentos</h2>
+    <div class="panel panel-info">
+        <div class="panel-heading">Pagamentos efetuados</div>
+        <%= render :partial => 'payments/list_payment',:locals => { payments: @client.selection_payment(1) } %>
+    </div>
+    <h2>Débitos</h2>
+    <div class="panel panel-danger">
+        <div class="panel-heading">Débitos do cliente</div>
+        <%= render :partial => 'payments/list_payment',:locals => { payments: @client.selection_payment(0) } %>
+    </div>
