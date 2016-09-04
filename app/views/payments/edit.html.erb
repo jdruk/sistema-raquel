@@ -3,4 +3,4 @@
 <%= render 'form' %>
 
 <%= link_to 'Mostrar',client_payment_path(@client, @payment), class: 'btn btn-default'  %>
-<%= link_to 'Voltar', client_payments_path, class: 'btn btn-default' %>
+<%= link_to 'Voltar', client_path(@client), class: 'btn btn-default' %>

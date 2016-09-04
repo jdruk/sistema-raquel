@@ -6,15 +6,24 @@ class Payment < ActiveRecord::Base
     enum payment_type: [:debito,:pago]
 
     def self.value_paid
-        Payment.value_group_payment 1
+        value = Payment.value_group_payment 1
+        Payment.valide_value value
     end
 
     def self.value_debit
-        Payment.value_group_payment 0
+        value = Payment.value_group_payment 0
+        Payment.valide_value value
     end
 
     def self.cashier
         Payment.value_paid - Payment.value_debit
+    end
+
+    def self.valide_value value
+        unless value.nil?
+            return value
+        end
+        return 0.0
     end
 
     private

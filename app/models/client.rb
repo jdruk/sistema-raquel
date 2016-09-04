@@ -1,5 +1,5 @@
 class Client < ActiveRecord::Base
-    has_many :payments
+    has_many :payments, dependent: :destroy
 
     def selection_payment type
         self.payments.where payment_type: type
