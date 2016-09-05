@@ -1,0 +1,65 @@
+<%= form_for(@check) do |f| %>
+  <% if @check.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@check.errors.count, "error") %> prohibited this check from being saved:</h2>
+
+      <ul>
+      <% @check.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :bank %><br>
+    <%= f.text_field :bank %>
+  </div>
+  <div class="field">
+    <%= f.label :agency %><br>
+    <%= f.text_field :agency %>
+  </div>
+  <div class="field">
+    <%= f.label :account %><br>
+    <%= f.text_field :account %>
+  </div>
+  <div class="field">
+    <%= f.label :number_check %><br>
+    <%= f.text_field :number_check %>
+  </div>
+  <div class="field">
+    <%= f.label :holder %><br>
+    <%= f.text_field :holder %>
+  </div>
+  <div class="field">
+    <%= f.label :value_check %><br>
+    <%= f.text_field :value_check %>
+  </div>
+  <div class="field">
+    <%= f.label :date_emission %><br>
+    <%= f.date_select :date_emission %>
+  </div>
+  <div class="field">
+    <%= f.label :status_check %><br>
+    <%= f.number_field :status_check %>
+  </div>
+  <div class="field">
+    <%= f.label :phone_one %><br>
+    <%= f.text_field :phone_one %>
+  </div>
+  <div class="field">
+    <%= f.label :phone_two %><br>
+    <%= f.text_field :phone_two %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :client_id %><br>
+    <%= f.text_field :client_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

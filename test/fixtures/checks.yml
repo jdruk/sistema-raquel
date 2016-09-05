@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  bank: MyString
+  agency: MyString
+  account: MyString
+  number_check: MyString
+  holder: MyString
+  value_check: 1.5
+  date_emission: 2016-09-04
+  status_check: 1
+  phone_one: MyString
+  phone_two: MyString
+  description: MyText
+  client_id: 
+
+two:
+  bank: MyString
+  agency: MyString
+  account: MyString
+  number_check: MyString
+  holder: MyString
+  value_check: 1.5
+  date_emission: 2016-09-04
+  status_check: 1
+  phone_one: MyString
+  phone_two: MyString
+  description: MyText
+  client_id: 

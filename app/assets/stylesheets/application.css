@@ -13,7 +13,11 @@
  *= require_tree .
  *= require_self
  */
- 
+
+.top-buffer { margin-top:5px; }
+.btn-white {color: white !important;}
+
+
  /****** LOGIN MODAL ******/
  .loginmodal-container {
    padding: 30px;

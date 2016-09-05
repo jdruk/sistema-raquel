@@ -1,0 +1,2 @@
+json.extract! check, :id, :bank, :agency, :account, :number_check, :holder, :value_check, :date_emission, :status_check, :phone_one, :phone_two, :description, :client_id, :created_at, :updated_at
+json.url check_url(check, format: :json)

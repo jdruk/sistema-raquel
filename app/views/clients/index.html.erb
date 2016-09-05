@@ -1,28 +1,29 @@
 <h1>Lista de clientes</h1>
+<div class="table-responsive">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Endereço</th>
+                <th>Telefone</th>
+                <th colspan="3">Ações</th>
+            </tr>
+        </thead>
 
-<table class="table table-hover">
-  <thead>
-    <tr>
-      <th>Nome</th>
-      <th>Endereço</th>
-      <th>Telefone</th>
-      <th colspan="3">Ações</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @clients.each do |client| %>
-      <tr>
-        <td><%= client.name %></td>
-        <td><%= client.address %></td>
-        <td><%= client.telephone %></td>
-        <td><%= link_to 'Mostrar', client, class: "btn btn-default btn-xs" %></td>
-        <td><%= link_to 'Editar', edit_client_path(client), class: "btn btn-default btn-xs" %></td>
-        <td><%= link_to 'Deletar', client, method: :delete, data: { confirm: 'Você tem certeza?' },class: "btn btn-danger btn-xs" %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+        <tbody>
+            <% @clients.each do |client| %>
+            <tr>
+                <td><%= client.name %></td>
+                <td><%= client.address %></td>
+                <td><%= client.telephone %></td>
+                <td><%= link_to 'Mostrar', client, class: "btn btn-default btn-xs" %></td>
+                <td><%= link_to 'Editar', edit_client_path(client), class: "btn btn-default btn-xs" %></td>
+                <td><%= link_to 'Deletar', client, method: :delete, data: { confirm: 'Você tem certeza?' },class: "btn btn-danger btn-xs" %></td>
+            </tr>
+            <% end %>
+        </tbody>
+    </table>
+</div>
 
 <br>
 

@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Bank:</strong>
+  <%= @check.bank %>
+</p>
+
+<p>
+  <strong>Agency:</strong>
+  <%= @check.agency %>
+</p>
+
+<p>
+  <strong>Account:</strong>
+  <%= @check.account %>
+</p>
+
+<p>
+  <strong>Number check:</strong>
+  <%= @check.number_check %>
+</p>
+
+<p>
+  <strong>Holder:</strong>
+  <%= @check.holder %>
+</p>
+
+<p>
+  <strong>Value check:</strong>
+  <%= @check.value_check %>
+</p>
+
+<p>
+  <strong>Date emission:</strong>
+  <%= @check.date_emission %>
+</p>
+
+<p>
+  <strong>Status check:</strong>
+  <%= @check.status_check %>
+</p>
+
+<p>
+  <strong>Phone one:</strong>
+  <%= @check.phone_one %>
+</p>
+
+<p>
+  <strong>Phone two:</strong>
+  <%= @check.phone_two %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @check.description %>
+</p>
+
+<p>
+  <strong>Client:</strong>
+  <%= @check.client %>
+</p>
+
+<%= link_to 'Edit', edit_check_path(@check) %> |
+<%= link_to 'Back', checks_path %>

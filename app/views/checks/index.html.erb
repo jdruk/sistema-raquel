@@ -1,0 +1,41 @@
+<h1>Lista de cheques</h1>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Banco</th>
+      <th>Agência</th>
+      <th>Conta</th>
+      <th>Número cheque</th>
+      <th>Titular</th>
+      <th>Valor</th>
+      <th>Status cheque</th>
+      <th>Telefone</th>
+      <th>Cliente</th>
+      <th colspan="3" class="text-center">Ações</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @checks.each do |check| %>
+      <tr>
+        <td><%= check.bank %></td>
+        <td><%= check.agency %></td>
+        <td><%= check.account %></td>
+        <td><%= check.number_check %></td>
+        <td><%= check.holder %></td>
+        <td><%= number_to_currency check.value_check %></td>
+        <td><%= check.status_check %></td>
+        <td><%= check.phone_one %></td>
+        <td><%= check.client %></td>
+        <td><%= link_to 'Mostrar', check, class: 'btn btn-default btn-xs' %></td>
+        <td><%= link_to 'Editar', edit_check_path(check), class:'btn btn-default btn-xs' %></td>
+        <td><%= link_to 'Deletar', check, method: :delete, data: { confirm: 'Você tem certeza?' }, class:'btn btn-danger btn-xs' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Novo cheque', new_check_path, class: 'btn btn-primary'%>
