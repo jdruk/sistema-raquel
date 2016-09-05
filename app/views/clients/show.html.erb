@@ -50,4 +50,4 @@
             <%= render :partial => 'payments/list_payment',:locals => { payments: @client.selection_payment(0) } %>
         </div>
     </div>
-    <%= render partial: 'checks/geral', locals: {checks: @client.checks, head_name: 'cheques' } %>
+    <%= render partial: 'checks/geral', locals: {checks: @client.checks.order(:status_check), head_name: 'cheques' } %>
