@@ -1,4 +1,12 @@
 <h1>Lista de cheques</h1>
+<div class="well">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+        Descrição geral
+        </div>
+
+    </div>
+</div>
 
 <table class="table table-hover">
   <thead>
@@ -27,7 +35,7 @@
         <td><%= number_to_currency check.value_check %></td>
         <td><%= check.status_check %></td>
         <td><%= check.phone_one %></td>
-        <td><%= check.client %></td>
+        <td><%= check.client.name %></td>
         <td><%= link_to 'Mostrar', check, class: 'btn btn-default btn-xs' %></td>
         <td><%= link_to 'Editar', edit_check_path(check), class:'btn btn-default btn-xs' %></td>
         <td><%= link_to 'Deletar', check, method: :delete, data: { confirm: 'Você tem certeza?' }, class:'btn btn-danger btn-xs' %></td>

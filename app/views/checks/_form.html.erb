@@ -1,65 +1,90 @@
-<%= form_for(@check) do |f| %>
-  <% if @check.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@check.errors.count, "error") %> prohibited this check from being saved:</h2>
-
-      <ul>
-      <% @check.errors.full_messages.each do |message| %>
+<%= form_for(@check, html:{ class: 'form-horizontal'} ) do |f| %>
+<% if @check.errors.any? %>
+<div id="error_explanation">
+    <h2><%= pluralize(@check.errors.count, "error") %> prohibited this check from being saved:</h2>
+    <ul>
+        <% @check.errors.full_messages.each do |message| %>
         <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :bank %><br>
-    <%= f.text_field :bank %>
-  </div>
-  <div class="field">
-    <%= f.label :agency %><br>
-    <%= f.text_field :agency %>
-  </div>
-  <div class="field">
-    <%= f.label :account %><br>
-    <%= f.text_field :account %>
-  </div>
-  <div class="field">
-    <%= f.label :number_check %><br>
-    <%= f.text_field :number_check %>
-  </div>
-  <div class="field">
-    <%= f.label :holder %><br>
-    <%= f.text_field :holder %>
-  </div>
-  <div class="field">
-    <%= f.label :value_check %><br>
-    <%= f.text_field :value_check %>
-  </div>
-  <div class="field">
-    <%= f.label :date_emission %><br>
-    <%= f.date_select :date_emission %>
-  </div>
-  <div class="field">
-    <%= f.label :status_check %><br>
-    <%= f.number_field :status_check %>
-  </div>
-  <div class="field">
-    <%= f.label :phone_one %><br>
-    <%= f.text_field :phone_one %>
-  </div>
-  <div class="field">
-    <%= f.label :phone_two %><br>
-    <%= f.text_field :phone_two %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </div>
-  <div class="field">
-    <%= f.label :client_id %><br>
-    <%= f.text_field :client_id %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+        <% end %>
+    </ul>
+</div>
 <% end %>
+<div class="col-sm-3">
+    <div class="form-group rigth-buffer">
+        <%= f.label :Banco, class: 'control-label' %><br>
+        <%= f.text_field :bank, class: 'form-control ' %>
+    </div>
+</div>
+<div class="col-sm-3 ">
+    <div class="form-group rigth-buffer">
+        <%= f.label :Agência, class: 'control-label' %><br>
+        <%= f.text_field :agency, class: 'form-control' %>
+    </div>
+</div>
+<div class="col-sm-3">
+    <div class="form-group rigth-buffer">
+        <%= f.label :Conta, class: 'control-label' %><br>
+        <%= f.text_field :account, class: 'form-control' %>
+    </div>
+</div>
+<div class="col-sm-3">
+    <div class="form-group rigth-buffer">
+        <%= f.label :Número, class: 'control-label' %><br>
+        <%= f.text_field :number_check, class: 'form-control' %>
+    </div>
+</div>
+<div class="col-sm-12">
+    <div class="form-group">
+        <%= f.label :Titular, class: 'control-label' %><br>
+        <%= f.text_field :holder, class: 'form-control' %>
+    </div>
+</div>
+<div class="col-sm-3">
+    <div class="form-group">
+        <%= f.label :Valor, class: 'control-label' %><br>
+        <%= f.text_field :value_check, class: 'form-control' %>
+    </div>
+</div>
+<div class="col-sm-4 text-center">
+    <div class="form-group">
+        <%= f.label :Date_emissão, class: 'control-label' %><br>
+        <%= f.date_select :date_emission %>
+    </div>
+</div>
+<div class="col-sm-4">
+    <div class="form-group">
+        <%= f.label :status_check, class: 'control-label' %><br>
+        <%= f.select :status_check, options_for_select([:carteira,:transferido,:devolvido,:diversos], :carteira), {},class: 'form-control'  %>
+    </div>
+</div>
+<div class="col-sm-3">
+    <div class="form-group rigth-buffer">
+        <%= f.label :Telefone, class: 'control-label' %><br>
+        <%= f.text_field :phone_one , class: 'form-control'%>
+    </div>
+</div>
+<div class="col-sm-3">
+    <div class="form-group rigth-buffer">
+        <%= f.label :Telefone, class: 'control-label' %><br>
+        <%= f.text_field :phone_two, class: 'form-control' %>
+    </div>
+</div>
+<div class="col-sm-12">
+    <div class="form-group">
+        <%= f.label :Cliente, class: 'control-label' %><br>
+        <%= f.collection_select :client_id , Client.all , :id, :name,{},class: 'form-control' %>
+    </div>
+</div>
+<div class="col-sm-12">
+    <div class="form-group">
+        <%= f.label :Descrição , class: 'control-label'%><br>
+        <%= f.text_area :description, class: 'form-control'%>
+    </div>
+</div>
+<div class="col-sm-4">
+    <div class="actions">
+        <%= f.submit 'submeter', class: 'btn btn-primary' %>
+    </div>
+</div>
+<% end %>
+<hr>
