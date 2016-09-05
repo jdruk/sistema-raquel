@@ -1,36 +1,36 @@
 
 <p>
-  <strong>Bank:</strong>
+  <strong>Banco:</strong>
   <%= @check.bank %>
 </p>
 
 <p>
-  <strong>Agency:</strong>
+  <strong>Agência:</strong>
   <%= @check.agency %>
 </p>
 
 <p>
-  <strong>Account:</strong>
+  <strong>Conta:</strong>
   <%= @check.account %>
 </p>
 
 <p>
-  <strong>Number check:</strong>
+  <strong>Numero cheque:</strong>
   <%= @check.number_check %>
 </p>
 
 <p>
-  <strong>Holder:</strong>
+  <strong>Titular:</strong>
   <%= @check.holder %>
 </p>
 
 <p>
-  <strong>Value check:</strong>
+  <strong>Valor:</strong>
   <%= @check.value_check %>
 </p>
 
 <p>
-  <strong>Date emission:</strong>
+  <strong>Data emissão:</strong>
   <%= @check.date_emission %>
 </p>
 
@@ -40,24 +40,24 @@
 </p>
 
 <p>
-  <strong>Phone one:</strong>
+  <strong>Telefone:</strong>
   <%= @check.phone_one %>
 </p>
 
 <p>
-  <strong>Phone two:</strong>
+  <strong>Telefone:</strong>
   <%= @check.phone_two %>
 </p>
 
 <p>
-  <strong>Description:</strong>
+  <strong>Descrição:</strong>
   <%= @check.description %>
 </p>
 
 <p>
-  <strong>Client:</strong>
+  <strong>Cliente:</strong>
   <%= @check.client.name %>
 </p>
-
-<%= link_to 'Edit', edit_check_path(@check) %> |
-<%= link_to 'Back', checks_path %>
+<hr>
+<%= link_to 'Editar', edit_check_path(@check), class: 'btn btn-default' %>
+<%= link_to 'Voltar', checks_path, class: 'btn btn-default'  %>

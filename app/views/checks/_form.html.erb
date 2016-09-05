@@ -54,7 +54,7 @@
 <div class="col-sm-4">
     <div class="form-group">
         <%= f.label :status_check, class: 'control-label' %><br>
-        <%= f.select :status_check, options_for_select([:carteira,:transferido,:devolvido,:diversos], :carteira), {},class: 'form-control'  %>
+        <%= f.select :status_check, Check.status_checks.keys, {}, class: 'form-control' %>
     </div>
 </div>
 <div class="col-sm-3">
