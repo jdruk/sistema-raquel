@@ -1,5 +1,9 @@
-<h1>New Payment</h1>
-
-<%= render 'form' %>
-
+<div class="panel panel-default">
+    <div class="panel-heading">
+        Novo pagamento
+    </div>
+    <div class="panel-body" style="padding:25px">
+        <%= render 'form' %>
+    </div>
+</div>
 <%= link_to 'Voltar', client_payments_path(@client), class: 'btn btn-default' %>

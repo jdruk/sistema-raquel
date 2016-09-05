@@ -1,6 +1,11 @@
-<h1>Editar pagamento</h1>
-
-<%= render 'form' %>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        Editar pagamento
+    </div>
+    <div class="panel-body" style="padding:25px">
+        <%= render 'form' %>
+    </div>
+</div>
 
 <%= link_to 'Mostrar',client_payment_path(@client, @payment), class: 'btn btn-default'  %>
 <%= link_to 'Voltar', client_path(@client), class: 'btn btn-default' %>
